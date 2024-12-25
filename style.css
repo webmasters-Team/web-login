@@ -1,0 +1,189 @@
+* {
+    box-sizing:border-box;
+  }
+  
+  :root {
+    --font-sans: Helvetica Neue, Helvetica, Arial, Sans-serif;
+    --font-serif: georgia, serif;
+  }
+  
+  .theme-black {
+    --bg-img: url('https://res.cloudinary.com/ddefclnxv/image/upload/v1732229653/Bedecked/black_mascot_vgktoq.png');
+    --bg-color: rgb(21,11,0);
+    --inset-bg: rgba(0,0,0,0.5);
+    --input-border: rgb(21,11,0);
+    --text-color: rgb(255,255,255);
+  }
+  
+  .theme-blue {
+    --bg-img: url('https://res.cloudinary.com/ddefclnxv/image/upload/v1732229653/Bedecked/blue_mascot_pyus70.png');
+    --bg-color: rgb(14, 104, 171);
+    --inset-bg: rgba(0,0,0,0.5);
+    --input-border: rgb(14,104,171);
+    --text-color: rgb(255,255,255);
+  }
+  
+  .theme-colorless {
+    --bg-img: url('https://res.cloudinary.com/ddefclnxv/image/upload/v1732229653/Bedecked/colorless_mascot_hzilty.png');
+    --bg-color: rgb(125,125,125);
+    --inset-bg: rgba(0,0,0,0.5);
+    --input-border: rgb(125,125,125);
+    --text-color: rgb(255,255,255);
+  }
+  
+  .theme-default {
+    --bg-img: url('https://res.cloudinary.com/ddefclnxv/image/upload/v1732300489/Bedecked/default_gmxkuw.png');
+    --bg-color: rgb(152,73,30);
+    --inset-bg: rgba(0,0,0,0.5);
+    --input-border: rgb(152,73,30);
+    --text-color: rgb(255,255,255);
+  }
+  
+  .theme-green {
+    --bg-img: url('https://res.cloudinary.com/ddefclnxv/image/upload/v1732229653/Bedecked/green_mascot_b44q3n.png');
+    --bg-color: rgb(0, 115, 62);
+    --inset-bg: rgba(0,0,0,0.5);
+    --input-border: rgb(0,115,62);
+    --text-color: rgb(255,255,255);
+  }
+  
+  .theme-red {
+    --bg-img: url('https://res.cloudinary.com/ddefclnxv/image/upload/v1732229654/Bedecked/red_mascot_wm0wh2.png');
+    --bg-color: rgb(211, 32, 42);
+    --inset-bg: rgba(0,0,0,0.5);
+    --input-border: rgb(211,32,42);
+    --text-color: rgb(255,255,255);
+  }
+  
+  .theme-white {
+    --bg-img: url('https://res.cloudinary.com/ddefclnxv/image/upload/v1732229654/Bedecked/white_mascot_rtmmz0.png');
+    --bg-color: rgb(248, 231, 185);
+    --inset-bg: rgba(255,255,255,0.5);
+    --input-border: rgb(248,231,185);
+    --text-color: rgb(0,0,0);
+  }
+  
+  body {
+    background:var(--bg-img) fixed no-repeat right top var(--bg-color);
+    background-size:contain;
+    height:100%;
+    transition-duration:0.7s;
+  }
+  
+  .register {
+    margin: 50px 5%;
+    width: 35%;
+    min-width:400px;
+    height:calc(100vh - 100px);
+    min-height:700px;
+    background:var(--inset-bg);
+    text-align:center;
+    padding:50px 100px;
+  }
+  .login-toggle {
+    position:relative;
+    font-family:var(--font-sans);
+    font-size:0.6rem;
+    color:var(--text-color);
+    font-weight:900;
+    letter-spacing:2px;
+    background:var(--inset-bg);
+    text-transform: uppercase;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-radius:7px;
+    transition-duration:0.5s;
+  }
+  .toggle-slider {
+    background: var(--inset-bg);
+    border:2px solid var(--input-border);
+    border-radius:8px;
+    transition-duration:0.7s;
+    height:50px;
+    width:50%;
+    position:absolute;
+    left:50%;
+    top:0;
+  }
+  .login-toggle label {
+    height:50px;
+    width:50%;
+    align-content:center;
+    cursor:pointer;
+    border-radius:7px;
+    position:relative;
+  }
+  .login-toggle input {
+    display:none;
+  }
+  #login:checked ~ .toggle-slider {
+    left:0;
+  }
+  .registrationlogo {
+    height:100px;
+  }
+  .registration {
+    margin:50px 0;
+    height:calc(100% - 200px);
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:space-between;
+  }
+  .registration select, .registration input {
+    height:50px;
+    font-family:var(--font-sans);
+    color:var(--text-color);
+    font-size:0.8rem;
+    text-align:center;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    background:var(--inset-bg);
+    border:2px solid var(--input-border);
+    border-radius:7px;
+  }
+  .registration select option {
+    background:#000;
+    color:#fff;
+    letter-spacing:3px;
+  }
+  .registration ::placeholder {
+    color:var(--text-color);
+  }
+  .registration button {
+    height:50px;
+    font-family:var(--font-serif);
+    color:var(--text-color);
+    font-size:0.8rem;
+    text-align:center;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    background:var(--input-border);
+    transition:0.4s;
+    border:0;
+    border-radius:25px;
+    box-shadow:10px 10px 5px var(--inset-bg);
+  }
+  .registration button:hover {
+    cursor:pointer;
+    font-size:1.1rem;
+  }
+  
+  @media (max-width:1500px) or (max-height:700px) {
+    #bedecked {
+      background-size:cover;
+      background-position: center top;
+    }
+    .theme-default, .theme-white {
+      background-position:right top !important;
+    }
+  }
+  
+  @media (max-width:800px) {
+   .register {
+      width:calc(100% - 100px);
+    }
+  }
